@@ -1,6 +1,7 @@
+# app/domain/product.py
+
 from dataclasses import dataclass
 from app.domain.exceptions import DomainValidationError
-
 @dataclass(frozen=True)
 class Product:
     id: int | None

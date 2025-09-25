@@ -1,0 +1,29 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+exclude = [".venv", "__pycache__", "app.db"]
+
+
+[tool.ruff.lint]
+# Activa un set útil de reglas
+select = [
+"E","F","I", # pycodestyle/pyflakes/imports
+"UP", # pyupgrade
+"B", # bugbear
+"SIM", # simplificaciones
+]
+ignore = [
+"E203", # compatibilidad con formateadores
+]
+
+
+[tool.mypy]
+python_version = "3.11"
+packages = ["app"]
+ignore_missing_imports = true
+strict_optional = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_return_any = true
+exclude = [".venv", "__pycache__"]

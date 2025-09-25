@@ -1,3 +1,5 @@
+# app/infrastructure/sqlite/sqlite_product_repository.py
+
 from typing import Iterable, Optional
 from app.domain.product import Product
 from app.use_cases.ports.product_repository import ProductRepository

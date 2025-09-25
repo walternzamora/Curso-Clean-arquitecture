@@ -1,3 +1,4 @@
+# app/interface_adapters/http/flask_app.py
 from flask import Flask, jsonify, request
 from app.use_cases.list_products import ListProducts
 from app.use_cases.create_product import CreateProduct

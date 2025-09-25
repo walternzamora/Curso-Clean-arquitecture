@@ -1,4 +1,5 @@
 # app/use_cases/create_product.py
+
 from app.domain.product import Product
 from app.use_cases.ports.product_repository import ProductRepository
 
