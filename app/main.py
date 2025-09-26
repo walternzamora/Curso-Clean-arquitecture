@@ -1,5 +1,10 @@
-from app.infrastructure.config.db import init_db
-from app.infrastructure.sqlite.sqlite_product_repository import SQLiteProductRepository
+#from app.infrastructure.config.db import init_db
+#from app.infrastructure.sqlite.sqlite_product_repository import SQLiteProductRepository
+
+from app.infrastructure.config.mysql import init_db 
+from app.infrastructure.mysql.mysql_product_repository import MySQLProductRepository
+
+#from app.infrastructure.memory.inmemory_product_repository import InMemoryProductRepository
 from app.use_cases.list_products import ListProducts
 from app.use_cases.create_product import CreateProduct
 from app.use_cases.update_product import UpdateProduct
@@ -7,8 +12,11 @@ from app.use_cases.delete_product import DeleteProduct
 from app.interface_adapters.http.flask_app import create_app
 
 def build_app():
+    #init_db()
+    #repo = SQLiteProductRepository()
     init_db()
-    repo = SQLiteProductRepository()
+    repo = MySQLProductRepository()
+    #repo = InMemoryProductRepository() 
     list_uc = ListProducts(repo)
     create_uc = CreateProduct(repo)
     update_uc = UpdateProduct(repo)
